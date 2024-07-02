@@ -79,19 +79,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	menu.addEventListener('click', goTo)
 
-	// let lists = document.querySelectorAll('[data-link]')
-
-	// function makeActive() {
-	// 	let scroll = window.scrollY
-	// 	lists.forEach((el, i) => {
-	// 		if (el.offsetTop <= scroll) {
-	// 			makeInactive(menuLinks)
-	// 			menuLinks[i].classList.add('active')
-	// 		}
-	// 	})
-	// }
-	// window.addEventListener('scroll', makeActive)
-
 	// MOBILE MENU
 	const hamburger = document.querySelector('.hamburger')
 	const mobileMenu = document.querySelector('header nav')
