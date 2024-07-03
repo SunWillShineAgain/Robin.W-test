@@ -75,6 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		})
 
 		e.target.classList.add('active')
+		closeMenu()
 	}
 
 	menu.addEventListener('click', goTo)
@@ -85,11 +86,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	if (window.innerWidth < 767) {
 		document.querySelectorAll('header nav li').forEach(li => {
-			li.addEventListener('click', () => {
-				mobileMenu.classList.remove('active')
-				hamburger.classList.remove('active')
-			})
+			li.addEventListener('click', closeMenu)
 		})
+	}
+
+	function closeMenu() {
+		mobileMenu.classList.remove('active')
+		hamburger.classList.remove('active')
 	}
 
 	const toggleMenu = e => {
@@ -98,10 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		hamburger.classList.toggle('active')
 
 		document.addEventListener('click', e => {
-			if (!e.target.classList.contains('menu__link')) {
-				mobileMenu.classList.remove('active')
-				hamburger.classList.remove('active')
-			}
+			if (!e.target.classList.contains('menu__link')) closeMenu()
 		})
 	}
 
